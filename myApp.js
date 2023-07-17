@@ -12,11 +12,11 @@ personSchemal = new mongoose.Schema({
     type : Number
   },
   favoriteFoods : [String]
-})
+});
 
 var Person = mongoose.model("Person",personSchemal);
 var createAndSavePerson = function(done){
-  var Minh = new Person({name : Minh,age : 20, favoriteFoods : ["shrimp"]});
+  var Minh = new Person({name : "Minh",age : 20, favoriteFoods : ["shrimp"]});
 
   Minh.save(function(err, data) {
     if (err) return console.error(err);
