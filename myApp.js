@@ -24,16 +24,16 @@ var createAndSavePerson = function(done){
   });
 };
 
-//var arrayOfPeople = [
-//  {name: "Frankie", age: 74, favoriteFoods: ["Del Taco"]},
-//  {name: "Sol", age: 76, favoriteFoods: ["roast chicken"]},
-//  {name: "Robert", age: 78, favoriteFoods: ["wine"]}
-//];
+var arrayOfPeople = [
+  {name: "Frankie", age: 74, favoriteFoods: ["Del Taco"]},
+  {name: "Sol", age: 76, favoriteFoods: ["roast chicken"]},
+  {name: "Robert", age: 78, favoriteFoods: ["wine"]}
+];
 
-//const createManyPeople = (arrayOfPeople, done) => {
-//  Person.create(arrayOfPeople);
-//  done(null , data);
-//};
+const createManyPeople = (arrayOfPeople, done) => {
+  Person.create(arrayOfPeople);
+  done(null , data);
+};
 
 const findPeopleByName = (personName, done) => {
   done(null /*, data*/);
