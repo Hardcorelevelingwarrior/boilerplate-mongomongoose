@@ -1,5 +1,6 @@
 require('dotenv').config();
-
+mongoose = require('mongoose');
+const mySecret = process.env['MONGO_URI']
 
 let Person;
 
@@ -54,6 +55,8 @@ const queryChain = (done) => {
 /** **Well Done !!**
 /* You completed these challenges, let's go celebrate !
  */
+
+mongoose.connect(mySecret, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
 
