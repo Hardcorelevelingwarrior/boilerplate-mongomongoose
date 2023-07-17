@@ -24,13 +24,12 @@ var createAndSavePerson = function(done){
   });
 };
 
-var arrayOfPeople = [
+
+const createManyPeople = (arrayOfPeople = [
   {name: "Frankie", age: 74, favoriteFoods: ["Del Taco"]},
   {name: "Sol", age: 76, favoriteFoods: ["roast chicken"]},
   {name: "Robert", age: 78, favoriteFoods: ["wine"]}
-];
-
-const createManyPeople = (arrayOfPeople, done) => {
+], done) => {
   Person.create(arrayOfPeople);
   done(null , data);
 };
