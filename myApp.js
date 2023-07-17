@@ -1,8 +1,22 @@
 require('dotenv').config();
 mongoose = require('mongoose');
 const mySecret = process.env['MONGO_URI']
+mongoose.connect(mySecret, { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 let Person;
+personSchemal = new mongoose.Schema({
+  name : {
+    type : String,
+    required : true
+  },
+  age : {
+    type : Number
+  },
+  favoriteFoods : [String]
+})
+
+Person = mongoose.model("Person",personSchemal);
 
 const createAndSavePerson = (done) => {
   done(null /*, data*/);
@@ -56,7 +70,6 @@ const queryChain = (done) => {
 /* You completed these challenges, let's go celebrate !
  */
 
-mongoose.connect(mySecret, { useNewUrlParser: true, useUnifiedTopology: true });
 
 //----- **DO NOT EDIT BELOW THIS LINE** ----------------------------------
 
