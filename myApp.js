@@ -30,10 +30,10 @@ var createAndSavePerson = function(done){
 //  {name: "Robert", age: 78, favoriteFoods: ["wine"]}
 //];
 
-const createManyPeople = (arrayOfPeople, done) => {
-  Person.create(arrayOfPeople);
-  done(null , data);
-};
+//const createManyPeople = (arrayOfPeople, done) => {
+//  Person.create(arrayOfPeople);
+//  done(null , data);
+//};
 
 const findPeopleByName = (personName, done) => {
   done(null /*, data*/);
