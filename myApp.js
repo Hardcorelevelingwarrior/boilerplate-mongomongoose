@@ -3,7 +3,6 @@ var mongoose = require('mongoose');
 mongoose.connect(process.env.MONGO_URI);
 
 
-let Person;
 personSchemal = new mongoose.Schema({
   name : {
     type : String,
@@ -15,14 +14,24 @@ personSchemal = new mongoose.Schema({
   favoriteFoods : [String]
 })
 
-Person = mongoose.model("Person",personSchemal);
+var Person = mongoose.model("Person",personSchemal);
+var createAndSavePerson = function(done){
+  var Minh = new Person({name : Minh,age : 20, favoriteFoods : ["shrimp"]});
 
-const createAndSavePerson = (done) => {
-  done(null /*, data*/);
-};
+  Minh.save(function(err, data) {
+    if (err) return console.error(err);
+    done(null, data)
+  });
+}
+var arrayOfPeople = [
+  {name: "Frankie", age: 74, favoriteFoods: ["Del Taco"]},
+  {name: "Sol", age: 76, favoriteFoods: ["roast chicken"]},
+  {name: "Robert", age: 78, favoriteFoods: ["wine"]}
+];
 
 const createManyPeople = (arrayOfPeople, done) => {
-  done(null /*, data*/);
+  Person.create(arrayOfPeople);
+  done(null , data);
 };
 
 const findPeopleByName = (personName, done) => {
